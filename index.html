@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScaleUp Studio | Scale Your Business Faster</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: false,
+            theme: {
+                extend: {
+                    colors: {
+                        /* Light theme inspired by the prototype */
+                        primary: '#0F172A',    // slate-900 – main heading text
+                        secondary: '#64748B',  // slate-500 – body text
+                        background: '#F3F4F6', // light gray page background
+                        surface: '#FFFFFF',    // card and navbar background
+                        accent: '#22C55E',     // emerald-500 – primary CTA
+                        accentSoft: '#DCFCE7', // emerald-100 – subtle accents
+                        borderSubtle: '#E5E7EB', // gray-200 – card borders
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    boxShadow: {
+                        'soft-card': '0 18px 45px rgba(15, 23, 42, 0.08)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.5s ease-out forwards',
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F3F4F6;
+            color: #0F172A;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Light theme scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #E5E7EB;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5F5;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #A5B4FC;
+        }
+
+        /* Utility classes tuned for light, card-based UI */
+        .glass {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+        }
+        
+        .dark-glass {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(15, 23, 42, 0.4);
+        }
+
+        .mesh-gradient {
+            background: radial-gradient(circle at 50% 0%, #E5E7EB 0%, #F9FAFB 40%, #E5E7EB 100%);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
