@@ -1,45 +1,47 @@
-
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { useAuthStore } from './store/authStore';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { Features } from './components/Features';
-import { SocialProof } from './components/SocialProof';
-import { WhyUs } from './components/WhyUs';
-import { Footer } from './components/Footer';
+import { Home } from './pages/Home';
+import { Login } from './pages/Login';
+import { AssessmentLayout } from './pages/AssessmentLayout';
+import { AssessmentIndex } from './pages/AssessmentIndex';
+import { Step0BusinessType } from './pages/Step0BusinessType';
+import { AssessmentStep } from './pages/AssessmentStep';
+import { AssessmentResults } from './pages/AssessmentResults';
 
-
-
-const App: React.FC = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  const handleScroll = useCallback(() => {
-    setScrollY(window.scrollY);
-  }, []);
+function App() {
+  const loadSession = useAuthStore((s) => s.loadSession);
+  const sessionLoading = useAuthStore((s) => s.sessionLoading);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
+    loadSession();
+  }, [loadSession]);
+
+  if (sessionLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <p className="text-secondary text-sm">Loading…</p>
+      </div>
+    );
+  }
 
   return (
-    <div className="relative min-h-screen bg-background font-sans selection:bg-accent/20 selection:text-primary">
-
+    <BrowserRouter>
       <Navbar />
-
-      <main className="overflow-hidden">
-        <Hero scrollY={scrollY} />
-
-        <div className="relative z-10 bg-background pt-24 pb-32">
-          <Features />
-          <WhyUs />
-          <SocialProof />
-        </div>
-      </main>
-
-      <Footer />
-
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/assessment" element={<AssessmentLayout />}>
+          <Route index element={<AssessmentIndex />} />
+          <Route path="step" element={<Navigate to="/assessment" replace />} />
+          <Route path="step/:step" element={<AssessmentStep />} />
+          <Route path="results" element={<AssessmentResults />} />
+        </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
-};
+}
 
 export default App;

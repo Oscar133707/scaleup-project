@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Reveal } from './shared/Reveal';
 
 const pxToRem = (px: number) => `${px / 16}rem`;
 
@@ -49,34 +49,32 @@ const featureData = [
 export const Features: React.FC = () => {
   return (
     <section className="container mx-auto px-6 py-24 mb-32 relative z-10" id="features">
-      <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
-        <div className="max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6 tracking-tight">
-            Everything you need <br />
-            <span className="text-accent">to scale.</span>
-          </h2>
+      <Reveal>
+        <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6 tracking-tight">
+              Everything you need <br />
+              <span className="text-accent">to scale.</span>
+            </h2>
+          </div>
+          <p className="text-secondary text-lg max-w-sm text-right hidden md:block">
+            Modular expertise for every stage of your journey.
+          </p>
         </div>
-        <p className="text-secondary text-lg max-w-sm text-right hidden md:block">
-          Modular expertise for every stage of your journey.
-        </p>
-      </div>
+      </Reveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 h-auto md:h-[600px]">
+      <Reveal delay={100}>
+        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 h-auto md:h-[600px]">
         {featureData.map((feature, idx) => (
           <div
             key={idx}
-            className={`group relative p-8 rounded-3xl bg-surface border border-borderSubtle transition-all overflow-hidden flex flex-col justify-between shadow-soft-card hover:shadow-lg cursor-pointer ${feature.className}`}
+            className={`group relative p-8 rounded-3xl bg-surface border border-borderSubtle transition-colors transition-shadow duration-200 overflow-hidden flex flex-col justify-between shadow-soft-card hover:shadow-lg hover:border-accent/30 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${feature.className}`}
           >
             <div className="flex items-center justify-between mb-4">
               <div className="w-10 h-10 rounded-full bg-accentSoft flex items-center justify-center border border-accent/20 group-hover:bg-accent group-hover:border-accent transition-colors">
                 <div className="text-accent group-hover:text-white transition-colors">
                   {feature.icon}
                 </div>
-              </div>
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0 transform duration-300">
-                <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
               </div>
             </div>
 
@@ -91,7 +89,8 @@ export const Features: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-accentSoft/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
           </div>
         ))}
-      </div>
+        </div>
+      </Reveal>
     </section>
   );
 };

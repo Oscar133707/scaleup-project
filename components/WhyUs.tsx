@@ -10,25 +10,26 @@ export const WhyUs: React.FC = () => {
 
             <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
                 <Reveal>
-                    <div className="relative group">
+                    <div className="relative group pb-0 lg:pb-16">
                         <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-[3rem] transform rotate-3 group-hover:rotate-2 transition-transform duration-700" />
                         <img
                             src="https://picsum.photos/1000/1200?random=1&grayscale"
-                            alt="Why Us"
-                            className="relative rounded-[3rem] shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] grayscale hover:grayscale-0"
+                            alt="Team collaboration and strategy discussion"
+                            className="relative rounded-[2rem] lg:rounded-[3rem] shadow-2xl transition-all duration-300 grayscale group-hover:grayscale-0 group-hover:opacity-95 w-full"
                         />
 
-                        <div className="absolute -bottom-10 -right-10 p-8 bg-surface border border-borderSubtle rounded-2xl max-w-sm shadow-2xl">
-                            <div className="flex gap-1 mb-4">
+                        {/* Testimonial card — inline on mobile, absolute on desktop */}
+                        <div className="mt-4 lg:mt-0 lg:absolute lg:-bottom-10 lg:-right-10 p-5 lg:p-8 bg-surface border border-borderSubtle rounded-2xl shadow-2xl lg:max-w-sm">
+                            <div className="flex gap-1 mb-3">
                                 {[1, 2, 3, 4, 5].map(i => (
                                     <svg key={i} className="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg>
                                 ))}
                             </div>
-                            <p className="text-secondary font-medium italic mb-4 leading-relaxed">"This isn't just a platform, it's our co-pilot. We doubled our revenue in 12 months."</p>
+                            <p className="text-secondary font-medium italic mb-3 leading-relaxed text-sm">"This isn't just a platform, it's our co-pilot. We doubled our revenue in 12 months."</p>
                             <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-full bg-accentSoft border border-accent/20" />
+                                <div className="w-8 h-8 rounded-full bg-accentSoft border border-accent/20 flex-shrink-0" />
                                 <p className="text-primary text-xs font-bold uppercase tracking-widest">Amit C., Lyca Mobile</p>
                             </div>
                         </div>
@@ -49,7 +50,7 @@ export const WhyUs: React.FC = () => {
 
                     <Reveal delay={200}>
                         <p className="text-lg text-secondary mb-12 leading-relaxed max-w-lg">
-                            We combine human expertise with AI-driven intelligence to give you a competitive edge.
+                            You can call us your business co-pilot, your smart colleague or maybe your best business partner.
                         </p>
                     </Reveal>
 
@@ -76,7 +77,7 @@ export const WhyUs: React.FC = () => {
                     </div>
 
                     <Reveal delay={600}>
-                        <button className="mt-12 px-8 py-4 bg-accent text-white rounded-full font-bold hover:scale-105 transition-transform active:scale-95 shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40 cursor-pointer">
+                        <button type="button" className="mt-12 px-8 py-4 bg-accent text-white rounded-full font-bold hover:opacity-95 transition-colors duration-200 shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
                             Explore Case Studies
                         </button>
                     </Reveal>

@@ -108,6 +108,48 @@
         .mesh-gradient {
             background: radial-gradient(circle at 50% 0%, #E5E7EB 0%, #F9FAFB 40%, #E5E7EB 100%);
         }
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #22C55E;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #22C55E;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        /* Guarantee dashboard section is always visible (works without Tailwind) */
+        #dashboard,
+        .dashboard-section {
+            min-height: 32rem;
+            background-color: #F3F4F6;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            scroll-margin-top: 6rem;
+        }
+        /* Focus visible for keyboard navigation */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid #22C55E;
+            outline-offset: 2px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+        }
     </style>
 <script type="importmap">
 {

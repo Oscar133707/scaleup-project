@@ -18,10 +18,10 @@ export const SocialProof: React.FC = () => {
 
       {/* Stats Row */}
       <div className="container mx-auto px-6 mb-24 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-y border-borderSubtle py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-y border-borderSubtle py-12">
           <Reveal delay={100}>
-            <div className="text-center group cursor-pointer">
-              <div className="text-5xl md:text-6xl font-bold text-primary mb-2 tracking-tighter transition-colors group-hover:text-accent">
+            <div className="text-center group cursor-pointer py-6 md:py-0 border-b md:border-b-0 border-borderSubtle last:border-b-0">
+              <div className="text-5xl md:text-6xl font-bold text-primary mb-2 tracking-tighter transition-colors duration-200 group-hover:text-accent">
                 45%
               </div>
               <p className="text-secondary text-sm uppercase tracking-widest">Average Growth</p>
@@ -29,8 +29,8 @@ export const SocialProof: React.FC = () => {
           </Reveal>
 
           <Reveal delay={200}>
-            <div className="text-center border-x border-borderSubtle md:px-12 group cursor-pointer">
-              <div className="text-5xl md:text-6xl font-bold text-primary mb-2 tracking-tighter transition-colors group-hover:text-accent">
+            <div className="text-center md:border-x border-borderSubtle md:px-12 group cursor-pointer py-6 md:py-0 border-b md:border-b-0 border-borderSubtle">
+              <div className="text-5xl md:text-6xl font-bold text-primary mb-2 tracking-tighter transition-colors duration-200 group-hover:text-accent">
                 2.5x
               </div>
               <p className="text-secondary text-sm uppercase tracking-widest">Efficiency Gain</p>
@@ -38,8 +38,8 @@ export const SocialProof: React.FC = () => {
           </Reveal>
 
           <Reveal delay={300}>
-            <div className="text-center group cursor-pointer">
-              <div className="text-5xl md:text-6xl font-bold text-primary mb-2 tracking-tighter transition-colors group-hover:text-accent">
+            <div className="text-center group cursor-pointer py-6 md:py-0">
+              <div className="text-5xl md:text-6xl font-bold text-primary mb-2 tracking-tighter transition-colors duration-200 group-hover:text-accent">
                 4.9/5
               </div>
               <p className="text-secondary text-sm uppercase tracking-widest">Client Satisfaction</p>
