@@ -137,7 +137,7 @@ export const useAssessmentStore = create<AssessmentState>()(
             current_state_text: r.current_state_text,
             current_state_rating: r.current_state_rating,
             future_vision_text: r.future_vision_text,
-            ...(r.answered_at ? { answered_at: r.answered_at } : {}),
+            answered_at: r.answered_at ?? (r.current_state_text ? assessment.created_at : undefined),
           };
         });
         set({
